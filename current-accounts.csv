@@ -1,0 +1,11 @@
+Output of Current User List;;;;;;;;;
+account;admin;{SHA512-CRYPT}$6$rounds=656000$x5oURjXO9znpZimN$qu9RrRSQyJuLUwHPCxheqWQRJu45E0re1Fm3hdrSc10Beqa554c/JpqBSERnlpuP6821BcJA8oMzOUwWnmH3o/;;;True;SuperAdmins;;;
+account;admin@s8-software.com;{SHA512-CRYPT}$6$rounds=656000$LFFOz654mlRrW573$QJBWRxchntVzN62/Fj1TZGUG1Nl2DSCm82Be4zZMPXeIij5L9KWvOPQQKgtYmpQzY14DcYZAulbKi.HWgaayf0;S8-software;Administrator;True;DomainAdmins;admin@s8-software.com;0;s8-software.com
+account;henry@s8-software.com;{SHA512-CRYPT}$6$rounds=656000$NTsXJ1LwRGQrjRUt$EFZ0l0UV/qHkAOogAJqHrmb3Di5yPDlaBNXove8RYTcjm7f2xNeheWWqAgtFtjE/oxTleyGZKTPDus/CONygD0;Henry;Henryson;True;SimpleUsers;henry@s8-software.com;0;
+account;jonathanzerox@s8-software.com;{SHA512-CRYPT}$6$rounds=656000$Zvl.aYETpwyXILz2$NtfBESw7vQd2VrGgps9wWF6FQY7tUhSNAEKZzKut7K09dqxk2GmZWunfQENJ5nvjYZ7P3iTh8amih2TkCUZMf.;Jonathan;Zerox;True;SimpleUsers;jonathanzerox@s8-software.com;0;
+account;noris@s8-software.com;{SHA512-CRYPT}$6$rounds=656000$izx5v77mHZi7ARNR$qvTan2NnW5OahyqvZMcHuZ9sFHVjZg899ybggBA8z8QgUUV.9cpLUrGoqoOfvLyiWtLqmJ4b2k7OObO2o4Saq.;Abaho;Noris;True;SimpleUsers;noris@s8-software.com;0;
+account;rlo@s8-software.com;{SHA512-CRYPT}$6$rounds=656000$a6VUMF8qaibo5OWX$ikAx/pQJsqeMLhmNn0I6a2YTDHS9VZnKR5qG1epCu6jSwt8zz6nXY39L7a7c8gMhrXEbeUyk7pLCtlsVSqJjs0;Robert;Orenstein;True;SuperAdmins;rlo@s8-software.com;0;
+account;wangoloj@s8-software.com;{SHA512-CRYPT}$6$rounds=656000$gw3oDktk4/QuYYWs$NB4R64ORKWlUf.NUoyWMI8tEWcV5wpiNzYvn/xLsAG17RPSgiS6xhJ5cSsi7jsqFuacvXT3dOAhC6ZbN4DI7m.;Wangolo;Joel;True;SimpleUsers;wangoloj@s8-software.com;0;
+account;zulip@s8-software.com;{SHA512-CRYPT}$6$rounds=656000$mZKejtuSFFEWhEHz$qnHWsKBMqIp7/RsmrYKWAe0Ss2Lyq/RP32rLjqm4Un87VCgVjYXEbTElCTMe69pUcMcv16gEvc7xuy1IjCbEN.;S8-software;Zulip;True;SimpleUsers;zulip@s8-software.com;0;
+alias;postmaster@s8-software.com;True;admin@s8-software.com;;;;;;
+alias;robert@s8-software.com;True;rlo@s8-software.com;;;;;;
