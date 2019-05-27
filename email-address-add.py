@@ -39,7 +39,7 @@ class Address(object):
         [ account (literal word); username; password; first name; last name; enabled; group; address; quota; [, domain, ...]
         """
 
-        return ['account', self.username, self.pwd, self.f_name, self.l_name, self.enabled, self.group, self.address, self.quota, '']
+        return ['account', self.username, self.pwd, self.f_name, self.l_name, self.enabled, self.group, self.address, self.quota ]
         """
         return "{}{} {}{} {}{} {}{} {}{} {}{} {}{} {}{} {}{}".format(self.acct_kwd, self.sep, self.username, self.sep, self.pwd, self.sep, self.f_name, self.sep, self.l_name, self.sep, self.enabled, self.sep, self.group, self.sep, self.address, self.sep, self.quota, self.sep)
         """
