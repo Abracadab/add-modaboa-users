@@ -1,0 +1,6 @@
+* Adding email addresses works, as long as the "secondary email address" and "quota" are blank strings.
+  Otherwise, gets "domain not found" on import.
+
+* Currently adds three hard-coded email addresses.
+
+* Needs to add list of addresses. Either ask manually from command line or build a quick flask interface.

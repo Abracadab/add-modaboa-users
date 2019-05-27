@@ -1,11 +1,11 @@
 """
 Easy entry of Modaboa-formatted email addresses.
 
+Modaboa import file requirements:
 Provide a CSV file where lines respect one of the following formats:
 account; loginname; password; first name; last name; enabled; group; address; quota; [, domain, ...]
 alias; address; enabled; recipient; recipient; ...
 The first element of each line is mandatory and must be equal to one of the previous values.
-
 You can use a different character as separator.
 """
 
@@ -39,7 +39,9 @@ class Address(object):
         [ account (literal word); username; password; first name; last name; enabled; group; address; quota; [, domain, ...]
         """
 
-        return ['account', self.username, self.pwd, self.f_name, self.l_name, self.enabled, self.group, self.address, self.quota ]
+        # Works fine when final "address" and "quota" are empty strings
+        # return ['account', self.username, self.pwd, self.f_name, self.l_name, self.enabled, self.group, self.address, self.quota ]
+        return ['account', self.username, self.pwd, self.f_name, self.l_name, self.enabled, self.group, '', '' ]
         """
         return "{}{} {}{} {}{} {}{} {}{} {}{} {}{} {}{} {}{}".format(self.acct_kwd, self.sep, self.username, self.sep, self.pwd, self.sep, self.f_name, self.sep, self.l_name, self.sep, self.enabled, self.sep, self.group, self.sep, self.address, self.sep, self.quota, self.sep)
         """
@@ -73,15 +75,15 @@ if __name__ == "__main__":
 
     addr_list = AddressList()
 
-    addr = Address('testerFAKEtester25', DEF_PWD, "Joe", "Smith", address='rlo.uganda@gmail.com')
+    addr = Address('fake1', DEF_PWD, "Joe", "Smith", address='rlo.uganda@gmail.com')
     # print(addr)
     addr_list.append(addr)
 
-    addr = Address('fooFAKEfoo1993', DEF_PWD, "Roger", "Thornhill", address = 'rlo.uganda@gmail.com')
+    addr = Address('fake2', DEF_PWD, "Roger", "Thornhill", address = 'rlo.uganda@gmail.com')
     # print(addr)
     addr_list.append(addr)
 
-    addr = Address('foosFAKEfoos721', DEF_PWD, "Sandra", "Smith", address = 'rlo.uganda@gmail.com')
+    addr = Address('fake3', DEF_PWD, "Sandra", "Smith", address = 'rlo.uganda@gmail.com')
     # print(addr)
     addr_list.append(addr)
 
