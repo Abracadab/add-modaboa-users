@@ -1,7 +1,6 @@
 import csv
 
 filename = './test-data.csv'
-delim = ','
 
 data = []
 
@@ -20,7 +19,7 @@ data.append(item)
 print(data)
 
 with open(filename, 'w', newline='') as csvFile:
-    writer = csv.writer(csvFile, delimiter=delim)
+    writer = csv.writer(csvFile, delimiter='%')
     writer.writerows(data)
 
 csvFile.close()
