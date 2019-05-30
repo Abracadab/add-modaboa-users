@@ -11,10 +11,11 @@ You can use a different character as separator.
 
 import csv
 
-FILE_NAME = "./addresses.csv"
+IN_FILE = "./basic_info.csv"
+OUT_FILE = "./ready_for_modoboa.csv"
 SEP = ';'
 ACCOUNT_KWD = "account"
-DEF_PWD = "default12"
+DEF_PWD = "PAssword12"
 DOMAIN = 's8-software.com'
 DELIM = ';'
 
@@ -48,7 +49,8 @@ class Address(object):
 
 class AddressList(list):
 
-    file_name = FILE_NAME
+    in_file = IN_FILE
+    out_file = OUT_FILE
     def __init__(self):
         pass
 
@@ -63,19 +65,47 @@ class AddressList(list):
     """
 
     def write(self):
-        with open(self.file_name, mode='w', newline='') as csvFile:
+        """
+        Hmmm.
+        Modoboa import seems to expect the delimiter to be followed by a space.
+        But now that I'm writing using the CSV module, that's non-trivial.
+        So the output file must be hand-opened and all ';'s replaced with '; '.
+        No... that's not the problem. The password must contain an uppercase char.
+        (Unless they're BOTH problems!)
+        Still failed to login, even with the uppercase char. So hand-editing to add the space again.
+        Still failing, weirdly. And when I updated the password for the user as "admin", the interface
+        language changed to Czech.
+        Going back to not hand-editing the email address file.
+        """
+        with open(self.out_file, mode='w', newline='') as csvFile:
             writer = csv.writer(csvFile, delimiter=DELIM)
             for address in self:
                 # print(address)
                 writer.writerow(address.__repr__())
+
+    def read(self):
+        with open(self.in_file, mode='r', newline='') as csvfile:
+             reader = csv.reader(csvfile, delimiter=DELIM)
+             for row in reader:
+                addr = Address(row[2], DEF_PWD, row[0], row[1])
+                self.append(addr)
 
 
 
 if __name__ == "__main__":
 
     addr_list = AddressList()
+    addr_list.read()
+    for addr in addr_list:
+        for field in addr.__repr__():
+            print(field,)
 
-    addr = Address('fake1', DEF_PWD, "Joe", "Smith", address='rlo.uganda@gmail.com')
+    addr_list.write()
+
+    import sys
+    sys.exit()
+
+
     # print(addr)
     addr_list.append(addr)
 
@@ -83,7 +113,7 @@ if __name__ == "__main__":
     # print(addr)
     addr_list.append(addr)
 
-    addr = Address('fake3', DEF_PWD, "Sandra", "Smith", address = 'rlo.uganda@gmail.com')
+    addr = Address('fake33', DEF_PWD, "Sandra", "Smith", address = 'rlo.uganda@gmail.com')
     # print(addr)
     addr_list.append(addr)
 

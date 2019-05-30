@@ -1,6 +1,6 @@
 * Adding email addresses works, as long as the "secondary email address" and "quota" are blank strings.
   Otherwise, gets "domain not found" on import.
 
-* Currently adds three hard-coded email addresses.
+* No matter what, the password doesn't work when the user tries to log in. The admin can change the password from modoboa, but when the user logs in they'll see a message in Czech that says "clipboard required".
 
-* Needs to add list of addresses. Either ask manually from command line or build a quick flask interface.
+So not quite a disaster, but close.
